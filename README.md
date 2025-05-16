@@ -16,6 +16,7 @@ Sends values to screen output as well.
 PreReqs:
 Working Home Assistant
 Python
+pip install "python-socketio[client]"
 
 
 Python script that uses the ChargeHQ service to obtain Solar generation, charging rates and Battery data to use in HomeAssistant.
