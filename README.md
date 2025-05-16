@@ -54,6 +54,7 @@ Open the configuration.yaml file
 1.2. Add input_number entries
 Paste the following under the input_number: section. If input_number: doesn’t exist yet, add it at the end of the file:
 
+[code]
 input_number:
   chargehq_solar_kw:
     name: ChargeHQ Solar kW
@@ -78,6 +79,7 @@ input_number:
     step: 1
     unit_of_measurement: "%"
     mode: box
+[/code]
 
 
 STEP 4: Restart Home Assistant
