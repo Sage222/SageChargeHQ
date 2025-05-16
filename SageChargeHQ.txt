@@ -103,6 +103,8 @@ Replace the placeholder values in the script with your 2 tokens and Home Assista
 STEP 6:
 Run the python script.
 
+pythonw sagechargehqv4.py
+
 Output in your terminal (solar, EV, battery info)
 
 Those values updated in Home Assistant
