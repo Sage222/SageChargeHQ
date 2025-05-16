@@ -1,6 +1,11 @@
 # SageChargeHQ
 SageChargeHQ
 
+v2 - Initial build
+v4 - Added GUI and 15 seconds rate limiting of sending data to HomeAssist (Data from ChargeHQ cannot be controlled as its controlled by them)
+
+
+
 Disclaimer
 I am not a professional just a hobbiest. So if it works great. If not sorry. Though it works for me with my Tesla & Goodwe inverter working properly through ChargeHQ.
 
@@ -17,7 +22,7 @@ PreReqs:
 Working Home Assistant - 
 Python - 
 pip install "python-socketio[client]"
-
+v4 - Needs Tkinter to prodce the nice GUI (Tkinter)
 
 Python script that uses the ChargeHQ service to obtain Solar generation, charging rates and Battery data to use in HomeAssistant.
 
@@ -163,5 +168,7 @@ action:
       message: >
         EV charge rate has been below 1.0 kW for over 10 minutes.
 Save and enable the automation.
+
+
 
 
