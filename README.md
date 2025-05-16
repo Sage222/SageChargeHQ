@@ -14,8 +14,8 @@ Sends the data to Home Assistant via its REST API using sensor.set_value.
 Sends values to screen output as well.
 
 PreReqs:
-Working Home Assistant
-Python
+Working Home Assistant - 
+Python - 
 pip install "python-socketio[client]"
 
 
