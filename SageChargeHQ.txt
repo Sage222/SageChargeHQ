@@ -106,4 +106,62 @@ Go to your Home Assistant Dashboard and add the new Entity "ChargeHQ"
 
 Enjoy!
 
+***************Appendix send an email with charging is low.
+
+ STEP 1: Make Sure Email Notifications Are Set Up
+Use SMTP Email Integration:
+
+Add this to your configuration.yaml (if not already done):
+
+notify:
+  - name: email_alert
+    platform: smtp
+    server: smtp.gmail.com  # Or your mail provider
+    port: 587
+    sender: your_email@gmail.com
+    encryption: starttls
+    username: your_email@gmail.com
+    password: your_app_password
+    recipient:
+      - your_email@gmail.com
+    sender_name: "Home Assistant"
+💡 If using Gmail, you'll need to create an App Password and use that instead of your main password.
+
+Restart Home Assistant after editing configuration.yaml.
+
+⚡ STEP 2: Create a Template Binary Sensor
+This sensor will turn on when input_number.chargehq_ev_kw is below 1.0.
+
+Add to configuration.yaml:
+
+template:
+  - binary_sensor:
+      - name: "EV Charging Low"
+        state: >
+          {{ states('input_number.chargehq_ev_kw')|float < 1.0 }}
+        delay_on:
+          minutes: 10
+        unique_id: ev_charging_low
+🧠 delay_on ensures the state only becomes on after 10 minutes continuously low.
+
+Then restart Home Assistant again.
+
+📩 STEP 3: Create an Automation to Send the Email
+Go to Settings > Automations > + Create Automation > Start with Empty Automation, and add:
+
+Triggers:
+trigger:
+  - platform: state
+    entity_id: binary_sensor.ev_charging_low
+    to: "on"
+Actions:
+
+action:
+  - service: notify.email_alert
+    data:
+      title: "⚠️ EV Charging Low"
+      message: >
+        EV charge rate has been below 1.0 kW for over 10 minutes.
+Save and enable the automation.
+
 
