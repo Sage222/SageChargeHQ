@@ -22,6 +22,7 @@ Python script that uses the ChargeHQ service to obtain Solar generation, chargin
 
 This allows the user to see charge, solar and battery stats without going down the Tesla or other EV rabbit hole by using the existing data in ChargeHQ.
 
+STEP 1: Sign up
 Sign up to ChargeHQ and configure it for your car and solar.  Free account is fine.
 
 https://chargehq.net/
@@ -30,6 +31,7 @@ Once signed up you can see your data on your mobile or here:
 
 https://app.chargehq.net/tabs/home
 
+STEP 2: Get your TOKEN
 On your PC go too https://app.chargehq.net/tabs/home login and Press F12 and refresh and view the websockets to find your Token. 
 
 It should be like: (Where eyJ****************** is your token)
@@ -41,7 +43,7 @@ Request Method
 Make note of this token.
 
 
-1.1 Open Your configuration.yaml
+STEP 3: Open Your configuration.yaml
 Go to Settings > System > Repairs > YAML configuration
 
 Click “Edit in Studio Code Server” or use the File Editor add-on
@@ -77,9 +79,9 @@ input_number:
     mode: box
 
 
-STEP 2: Restart Home Assistant
+STEP 4: Restart Home Assistant
 
-STEP 3: Create a Long-Lived Access Token
+STEP 5: Create a Long-Lived Access Token
 In the Home Assistant UI, click your user profile (bottom left corner)
 
 Scroll to “Long-Lived Access Tokens”
@@ -90,6 +92,7 @@ Copy and save the token — you’ll use it in the Python script
 
 Replace the placeholder values in the script with your 2 tokens and Home Assistant URL
 
+STEP 6:
 Run the python script.
 
 Output in your terminal (solar, EV, battery info)
