@@ -9,7 +9,7 @@ from tkinter import ttk
 
 # === CONFIG ===
 TOKEN = "CHARGEHQTOKEN"
-HA_URL = "http://homeassistant.local:8123"
+HA_URL = "http://homeassistant.local:8123"  #USE IP ADDRESS IS USUALLY BETTER THAN DNS NAME UNDER WINDOWS
 HA_TOKEN = "HOMEASSISTTOKEN"
 THROTTLE_INTERVAL = 15  # seconds
 
