@@ -33,12 +33,12 @@ Sign up to ChargeHQ and configure it for your car and solar.  Free account is fi
 
 https://chargehq.net/
 
-Once signed up you can see your data on your mobile or here:
+Once signed up you can see your data on your mobile phone or on their website here:
 
 https://app.chargehq.net/tabs/home
 
 STEP 2: Get your TOKEN
-On your PC go too https://app.chargehq.net/tabs/home login and Press F12 and refresh and view the websockets to find your Token. 
+On your PC go to https://app.chargehq.net/tabs/home login and Press F12 and refresh and view the websockets to find your Token. 
 
 It should be like: (Where eyJ****************** is your token)
 
@@ -49,14 +49,14 @@ Request Method
 Make note of this token.
 
 
-STEP 3: Open Your configuration.yaml
-Go to Settings > System > Repairs > YAML configuration
+STEP 3: Open Your configuration.yaml in HomeAssistant
+Go to Settings > System > Repairs > YAML configuration (or use a file editor)
 
 Click “Edit in Studio Code Server” or use the File Editor add-on
 
 Open the configuration.yaml file
 
-1.2. Add input_number entries
+1.2. Add input_number entries to receive the date from the python script.
 Paste the following under the input_number: section. If input_number: doesn’t exist yet, add it at the end of the file:
 
 
@@ -98,16 +98,18 @@ Click “Create Token” → Give it a name like chargehq-script
 
 Copy and save the token — you’ll use it in the Python script
 
-Replace the placeholder values in the script with your 2 tokens and Home Assistant URL
+Replace the placeholder values in the sagechargehq python script with your 2 tokens and Home Assistant URL:PORT  (on windows HomeAssistant IP:PORT works better than DNS name).
 
 STEP 6:
 Run the python script.
 
 pythonw sagechargehqv4.py
 
-Output in your terminal (solar, EV, battery info)
+You should see the GUI open and soon afterwards your EV data.
 
-Those values updated in Home Assistant
+(solar, EV, battery info)
+
+Those values should soon populate in Home Assistant
 
 Go to your Home Assistant Dashboard and add the new Entity "ChargeHQ"
 
