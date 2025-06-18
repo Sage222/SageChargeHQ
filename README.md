@@ -1,4 +1,4 @@
-# SageChargeHQ queries ChargeHQ in order to obtain EV data for use in a GUI and HomeAssistant.
+# SageChargeHQ
 SageChargeHQ queries ChargeHQ in order to obtain EV data for use in a GUI and HomeAssistant.
 
 Disclaimer
