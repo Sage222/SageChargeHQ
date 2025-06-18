@@ -1,5 +1,5 @@
 # SageChargeHQ queries ChargeHQ in order to obtain EV data for use in a GUI and HomeAssistant.
-SageChargeHQ
+SageChargeHQ queries ChargeHQ in order to obtain EV data for use in a GUI and HomeAssistant.
 
 Disclaimer
 I am not a professional just a hobbiest. So if it works great. If not sorry. Though it works for me with my Tesla & Goodwe inverter working properly through ChargeHQ.
